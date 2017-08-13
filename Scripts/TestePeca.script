@@ -1,0 +1,64 @@
+// Autores: GB e PCT
+// Data: 14/10
+
+===Condições de Retorno
+=declararparm    OK              int 0
+=declararparm    FaltouMemoria   int 1
+=declararparm    PNaoExiste      int 2
+=declararparm    PJaExiste       int 3
+
+===Declaração de Variáveis
+=declararparm    Azul            char 'b'
+=declararparm    Verde           char 'g'
+=declararparm    Amarelo         char 'y'
+=declararparm    Vermelho        char 'r'
+=declararparm    ptrPeca1        string "ts"
+=declararparm    ptrPeca2        string "xs"
+=declararparm    ptrPeca3        string "cs"
+=declararparm    ptrPeca4        string "bs"
+=declararparm    casa1           int 5
+=declararparm    casa2           int 6
+=declararparm    casa3           int 7
+=declararparm    casa4           int 8
+
+==Criando 1 Peça
+=criar   ptrPeca1   Azul     casa1    OK
+
+==Tentando Sobrescrever 1 Peça
+=criar   ptrPeca1   Azul     casa1    PJaExiste
+
+==Destruindo Peça
+=dest   ptrPeca1    Azul            OK
+
+==Destruindo algo que não existe
+=dest   ptrPeca1    Azul               PNaoExiste
+
+==Criando 2 Peças
+=criar   ptrPeca1   Azul     casa1    OK
+=criar   ptrPeca2   Verde    casa2    OK
+
+==Destruindo 2 Peças
+=dest   ptrPeca1    Azul                 OK
+=dest   ptrPeca2    Verde                OK
+
+==Criando 3 Peças
+=criar   ptrPeca1   Vermelho  casa1   OK
+=criar   ptrPeca2   Amarelo   casa2   OK
+=criar   ptrPeca3   Azul      casa3   OK
+
+==Destruindo 3 Peças
+=dest   ptrPeca2   Amarelo               OK
+=dest   ptrPeca1   Vermelho              OK
+=dest   ptrPeca3   Azul                  OK
+
+==Criando 4 Peças
+=criar   ptrPeca1   Vermelho  casa1   OK
+=criar   ptrPeca2   Azul      casa2   OK
+=criar   ptrPeca3   Verde     casa3   OK
+=criar   ptrPeca4   Amarelo   casa4   OK
+
+==Destruindo 4 Peças
+=dest   ptrPeca1   Vermelho     OK
+=dest   ptrPeca2   Azul         OK
+=dest   ptrPeca3   Verde        OK
+=dest   ptrPeca4   Amarelo      OK

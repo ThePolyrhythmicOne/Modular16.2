@@ -1,0 +1,74 @@
+************************************** Especificação Ludo ********************************************
+
+Requisitos Funcionais:
+
+* O jogo deve suportar de 2 a 4 jogadores por partida.
+
+* Cada jogador deve possuir 4 peças, contidas no tabuleiro.
+
+* As peças serão divididas pelas cores vermelho, verde, amarelo e azul.
+
+* O dado deve retornar um número inteiro entre 1 e 6.
+
+* As peças devem começar na casa incial de cor correspondente.
+
+* Duas peças não podem ocupar uma mesma casa. Se for de uma mesma cor, a peça que tenta
+  ocupar essa mesma casa fica na casa anterior. Se for de cores diferentes, a peça que
+  tenta ocupar essa casa já ocupada se move a essa casa em questão e a peça que a estava
+  ocupando é movida para a casa inicial de cor correspondente, já estando pronto para se
+  mudar.
+
+* No início da partida, os jogadores devem lançar o dado, com aquele com maior número
+  obtido começando e a ordem seguindo em ordem anti-horária. Caso haja empate repete-se
+  o processo até haver um único maior número.
+
+* Uma peça só pode começar o trajeto quando o jogador correspondente obtiver um ou seis
+  no dado, na jogada em questão.
+
+* Cada peça deve se mover num sentido anti-horária dentro do trajeto, de acordo com o
+  número obtido no dado na jogada correspondente.
+
+* Ao chegar na casa final de cor correspondente, a peça deve entrar na reta final, de
+  cor correspondente.
+
+* A pontuação de todos os jogadores começam do zero.
+
+* Ao terminar de percorrer a reta final, a peça deve ficar imobilizado e a pontuação
+  do jogador correpondente deve ser incrementada.
+
+* O jogo deve permitir que diferentes peças de um mesmo jogador estejam disponíveis
+  para ser movidas a cada jogada, caso mais de uma peça de um jogador tenha sido inicializada.
+
+* Quando todas as peças de um jogador estiverem na casa final e sua pontuação chegar a 4,
+  o jogador deve ser declarado vencedor e a partida deve ser encerrada.
+
+* A casa final é a casa logo abaixo da reta final de cor correspondente.
+
+* As retas finais têm seis casas culminando no centro do tabuleiro onde encerra-se o
+  trajeto de cada peça, as retas correspondem a cor do jogador.
+
+* A casa inicial é a primeira casa branca disponível após a primeira casa da reta final correspondente.
+
+
+Requisitos Não Funcionais:
+
+* O tabuleiro de Ludo implementado é específico ao Ludo Clássico, não podendo ser
+  reutilizados para outros jogos ou variações.
+
+* A linguagem de implementação deverá ser C.
+
+* O jogo não possuirá dados persistentes.
+
+* Os módulos Lista e Lista Circular devem ser reutilizáveis.
+
+* As peças vermelhas serão represetadas pela letra 'r', as peças verder serão representadas
+  pela letra 'g', as peças amarelas serão representadas pela letra 'y' e as peças
+  azuis serão representadas pela letra 'b'.
+
+* Cada módulo implementado deve contar com uma descrição de uso, assim como descrição de
+  uso de cada função.
+
+* Cada módulo implementado deverá manter a corretude de todos os dados manipulados.
+
+* Para a compilação de cada um desses módulos é utilizada a ferramenta GMake, partindo
+  de arquivos .comp.

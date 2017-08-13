@@ -1,0 +1,6 @@
+/OUT:..\..\Produto\TesteLCircular.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+LCIRCULAR.obj  TESTACIRCULAR.obj  
+ArcaboucoTeste.lib
+

@@ -1,0 +1,130 @@
+// Script:		Circular.script
+// Autores:		Pedro Tamela, Gabriel Barbosa
+// Data:		27/09/2016
+// Proposito:   Testar o modulo de Lista Circular
+
+== Condicoes de Retorno
+=declararparm 	OK 						int 0
+=declararparm 	NaoExiste 				int 1
+=declararparm 	FaltouMemoria 			int 2
+=declararparm 	Vazia 					int 3
+=declararparm 	NaoAchou 				int 4
+=declararparm 	JaExiste 				int 5
+=declararparm 	ptrListaA 				string "lc"
+=declararparm 	ptrListaB 				string "lb"
+=declararparm 	ptrPreenche 			string "pp"
+
+== Devido a opacidade da lista, escolhemos utilizar int para os testes
+=declararparm 	ValorA 					int -1
+=declararparm 	ValorB 					int 0
+=declararparm 	ValorC 					int 1
+
+==Inicializando a contagem
+=inicializarcontadores                  ""
+=lercontadores                          "..\\scripts\\TesteCircular"
+=iniciarcontagem
+
+
+== Criar LC e Destruir LC
+=criar 			ptrListaA 				OK
+=criar          ptrListaA               JaExiste
+=des   			ptrListaA 				OK
+=des			ptrListaA				NaoExiste
+
+
+== Testando a existencia de uma LC
+=ins			ptrListaA ValorA		NaoExiste
+=rm				ptrListaA ValorA		NaoExiste
+=get			ptrListaA ValorA		NaoExiste
+=nxt			ptrListaA				NaoExiste
+=prv			ptrListaA				NaoExiste
+=curr			ptrListaA				NaoExiste
+=des			ptrListaA				NaoExiste
+
+== Criação, Inserção e Destruição de uma LC com um Nó
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=des            ptrListaA               OK
+
+== Inserindo um elemento na LC
+=criar 			ptrListaA				OK
+=ins			ptrListaA ValorA		OK
+=curr			ptrListaA				OK
+
+== Rodando na LC com um elemento
+=nxt			ptrListaA				OK
+=prv			ptrListaA				OK
+
+== Obtendo valores da LC com um elemento
+=curr			ptrListaA				OK
+=get			ptrListaA ValorA		OK
+
+== Removendo valores e destruindo LC com um elemento
+=rm				ptrListaA ValorA		OK
+=rm				ptrListaA ValorA		Vazia
+=des			ptrListaA				OK
+
+== Criando e inserindo dois elementos na LC
+=criar			ptrListaA				OK
+=ins			ptrListaA ValorA		OK
+=curr			ptrListaA				OK
+=ins			ptrListaA ValorB		OK
+=curr			ptrListaA				OK
+
+== Obtendo elementos da LC com dois elementos
+=get			ptrListaA ValorC		NaoAchou
+=get			ptrListaA ValorA		OK
+=get			ptrListaA ValorB		OK
+
+== Removendo elementos e destruindo a LC com dois elementos
+=rm				ptrListaA ValorA		OK
+=get			ptrListaA ValorA		NaoAchou
+=rm				ptrListaA ValorB		OK
+=get			ptrListaA ValorB		Vazia
+=curr			ptrListaA				Vazia
+=des			ptrListaA				OK
+
+== Criando e inserindo tres elementos na LC
+=criar			ptrListaA				OK
+=ins			ptrListaA ValorA		OK
+=curr			ptrListaA				OK
+=ins			ptrListaA ValorB		OK
+=curr			ptrListaA				OK
+=ins			ptrListaA ValorC		OK
+
+== Rodando na LC com tres elementos
+=nxt			ptrListaA				OK
+=curr			ptrListaA				OK
+=nxt			ptrListaA				OK
+=curr			ptrListaA				OK
+=nxt			ptrListaA				OK
+=curr			ptrListaA				OK
+=prv			ptrListaA				OK
+=curr			ptrListaA				OK
+=prv			ptrListaA				OK
+=curr			ptrListaA				OK
+=prv			ptrListaA				OK
+=curr			ptrListaA				OK
+
+== Obtendo elementos da LC com tres elementos
+=get			ptrListaA ValorA		OK
+=get			ptrListaA ValorB		OK
+=get			ptrListaA ValorC		OK
+
+== Eliminando elementos da LC com tres elementos
+=rm				ptrListaA ValorA		OK
+=get			ptrListaA ValorA		NaoAchou
+=rm				ptrListaA ValorB		OK
+=get			ptrListaA ValorB		NaoAchou
+=rm				ptrListaA ValorC		OK
+=get			ptrListaA ValorC		Vazia
+=des			ptrListaA				OK
+
+== Terminar contagem
+=pararcontagem
+=verificarcontagens                     0
+
+//Os erros de contadores sao decorrentes desse não ser o script que garante cobertura por arestas (vide TesteCircularArestas) e de nao haver verificacao nesse script
+
+==Finalizando
+=terminarcontadores

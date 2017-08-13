@@ -1,0 +1,70 @@
+// Script:              CircularArestas.script
+// Autores:             Pedro Tamela, Gabriel Barbosa
+// Data:                13/12/2016
+// Proposito:   Testar o modulo de Lista Circular, garantindo cobertura por arestas verificando e deturpando
+
+== Condicoes de Retorno
+=declararparm   OK                                      int 0
+=declararparm   NaoExiste                               int 1
+=declararparm   FaltouMemoria                           int 2
+=declararparm   Vazia                                   int 3
+=declararparm   NaoAchou                                int 4
+=declararparm   JaExiste                                int 5
+=declararparm   ErroEstrutural                          int 6
+=declararparm   ErroEstruturalRepair                    int 7
+=declararparm   ptrListaA                               string "lc"
+=declararparm   ptrListaB                               string "lb"
+=declararparm   ptrPreenche                             string "pp"
+
+== Devido a opacidade da lista, escolhemos utilizar int para os testes
+=declararparm   ValorA                                  int -1
+=declararparm   ValorB                                  int 0
+=declararparm   ValorC                                  int 1
+
+== Declaracao de opcoes de deturpacao
+=declararparm   CurrNull            int 0
+=declararparm   IniNull             int 1
+=declararparm   FimNull             int 2
+=declararparm   CurrTrash           int 3
+=declararparm   IniTrash            int 4
+=declararparm   FimTrash            int 5
+=declararparm   TipoNo              int 6
+=declararparm   TipoIni             int 7
+=declararparm   TipoFim             int 8
+
+==Inicializando a contagem
+=inicializarcontadores                  ""
+
+//== Quebra a corretude do programa
+//== Esse caso de teste apesar de não fazer com que o programa voe
+//== faz com que a corretude do Nó seja violada, podendo causar
+//== perda de dados ou até mesmo erros de segmentação no futuro.
+//=criar          ptrListaA               OK
+//=deturpar       ptrListaA CurrTrash
+//=verifica       ptrListaA               ErroEstrutural
+//=des            ptrListaA               OK
+
+//== Quebra a corretude do programa
+//== Esse caso faz com que a corretude esperada pela função destroe tabuleiro
+//== não aconteça, fazendo com que o programa voe.
+//==Voa
+//=criar          ptrListaA               OK
+//=deturpar       ptrListaA IniTrash
+//=verifica       ptrListaA               ErroEstrutural
+//=des            ptrListaA               OK
+
+//== Quebra a corretude do programa
+//== Novamente esse caso faz com que a corretude esperada pela função destroe tabuleiro
+//== não aconteça, fazendo com que o programa voe.
+//==Voa2
+//=criar          ptrListaA               OK
+//=deturpar       ptrListaA FimTrash
+//=verifica       ptrListaA               ErroEstrutural
+//=des            ptrListaA               OK 
+
+== Terminar contagem
+=pararcontagem
+=verificarcontagens                     0
+
+==Finalizando
+=terminarcontadores

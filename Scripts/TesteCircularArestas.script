@@ -1,0 +1,430 @@
+// Script:		CircularArestas.script
+// Autores:		Pedro Tamela, Gabriel Barbosa
+// Data:		13/12/2016
+// Proposito:   Testar o modulo de Lista Circular, garantindo cobertura por arestas verificando e deturpando
+
+== Condicoes de Retorno
+=declararparm 	OK 						int 0
+=declararparm 	NaoExiste 				int 1
+=declararparm 	FaltouMemoria 			int 2
+=declararparm 	Vazia 					int 3
+=declararparm 	NaoAchou 				int 4
+=declararparm 	JaExiste 				int 5
+=declararparm  ErroEstrutural       int 6
+=declararparm  ErroEstruturalRepair int 7
+=declararparm 	ptrListaA 				string "lc"
+=declararparm 	ptrListaB 				string "lb"
+=declararparm 	ptrPreenche 			string "pp"
+
+== Devido a opacidade da lista, escolhemos utilizar int para os testes
+=declararparm 	ValorA 					int -1
+=declararparm 	ValorB 					int 0
+=declararparm 	ValorC 					int 1
+
+== Declaracao de opcoes de deturpacao
+=declararparm   CurrNull            int 0
+=declararparm   IniNull             int 1
+=declararparm   FimNull             int 2
+=declararparm   CurrTrash           int 3
+=declararparm   IniTrash            int 4
+=declararparm   FimTrash            int 5
+=declararparm   TipoNo              int 6
+=declararparm   TipoIni             int 7
+=declararparm   TipoFim             int 8
+
+==Inicializando a contagem
+=inicializarcontadores                  ""
+=lercontadores                          "..\\scripts\\TesteCircular"
+=iniciarcontagem
+
+// SCRIPT PARTE 2 COBERTURA POR ARESTA
+
+== Testando a funcao Cria
+=criar          ptrListaA               OK
+=criar          ptrListaA               JaExiste
+=des            ptrListaA               OK
+=limitarmemoriadisponivel 1
+=criar          ptrListaA               FaltouMemoria
+=eliminarlimitesespaco
+
+== Testando a funcao Destroi
+=des            ptrListaA               NaoExiste
+=criar          ptrListaA               OK
+=des            ptrListaA               OK
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=des            ptrListaA               OK
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=des            ptrListaA               OK
+
+== Testando a funcao Insere 
+=ins            ptrListaA ValorA        NaoExiste
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorA        OK
+=des            ptrListaA               OK
+
+=limitarnumeroespacos 1
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        FaltouMemoria
+=des            ptrListaA               OK
+=eliminarlimitesespaco
+
+=limitarnumeroespacos 2
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        FaltouMemoria
+=des            ptrListaA               OK
+=eliminarlimitesespaco
+
+=limitarnumeroespacos 3
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        FaltouMemoria
+=des            ptrListaA               OK
+=eliminarlimitesespaco
+
+== Testando a funcao Get e a função auxiliar BuscaNo
+=get            ptrListaA ValorA        NaoExiste
+=criar          ptrListaA               OK
+=get            ptrListaA ValorA        Vazia
+=ins            ptrListaA ValorA        OK
+=get            ptrListaA ValorB        NaoAchou
+=get            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=get            ptrListaA ValorC        NaoAchou
+=get            ptrListaA ValorA        OK
+=get            ptrListaA ValorB        OK
+=des            ptrListaA               OK
+
+== Testando a funcao Remove
+=rm             ptrListaA ValorA        NaoExiste
+=criar          ptrListaA               OK
+=rm             ptrListaA ValorA        Vazia
+=ins            ptrListaA ValorA        OK
+=rm             ptrListaA ValorB        NaoAchou
+=rm             ptrListaA ValorA        OK
+== 2 Valores
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=rm             ptrListaA ValorA        OK
+=rm             ptrListaA ValorB        OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=rm             ptrListaA ValorB        OK
+=rm             ptrListaA ValorA        OK
+== 3 Valores
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=rm             ptrListaA ValorB        OK
+=des            ptrListaA               OK
+
+== Testando a funcao Próximo
+=nxt            ptrListaA               NaoExiste
+=criar          ptrListaA               OK
+=nxt            ptrListaA               Vazia
+=ins            ptrListaA ValorA        OK
+=nxt            ptrListaA               OK
+=ins            ptrListaA ValorB        OK
+=nxt            ptrListaA               OK
+=des            ptrListaA               OK
+
+== Testando a funcao Anterior
+=prv            ptrListaA               NaoExiste
+=criar          ptrListaA               OK
+=prv            ptrListaA               Vazia
+=ins            ptrListaA ValorA        OK
+=prv            ptrListaA               OK
+=ins            ptrListaA ValorB        OK
+=prv            ptrListaA               OK
+=des            ptrListaA               OK
+
+== Testando a funcao ObtemCorrente
+=curr           ptrListaA               NaoExiste
+=criar          ptrListaA               OK
+=curr           ptrListaA               Vazia
+=ins            ptrListaA ValorA        OK
+=curr           ptrListaA               OK
+=ins            ptrListaA ValorB        OK
+=curr           ptrListaA               OK
+=des            ptrListaA               OK
+
+== Verificando lista inexistente
+=verifica       ptrListaA               NaoExiste
+
+== Verificando uma lista vazia
+=criar          ptrListaA               OK
+=verifica       ptrListaA               OK
+=des            ptrListaA               OK
+
+== Verificando lista com um elemento
+=criar          ptrListaA               OK
+=verifica       ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=verifica       ptrListaA               OK
+=des            ptrListaA               OK
+
+== Verificando lista com multiplos elementos
+=criar          ptrListaB               OK
+=ins            ptrListaB ValorA        OK
+=ins            ptrListaB ValorB        OK
+=verifica       ptrListaB               OK
+=des            ptrListaB               OK
+
+== Deturpando e verificando
+=deturpar       ptrListaA CurrNull
+
+== Recupera 1
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA IniNull
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 2
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA CurrNull
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 3
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA FimNull
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 4
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA IniTrash
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 5
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA FimTrash
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 6
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA CurrTrash
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 7
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA TipoIni
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 8
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA TipoFim
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 9
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=deturpar       ptrListaA TipoNo
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 10
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA CurrNull
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 11
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA IniNull  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 12
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA FimNull  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 13
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA CurrTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 14
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA IniTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 15
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA FimTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 16
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA TipoIni  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 17
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA TipoNo  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 18
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=deturpar       ptrListaA TipoFim  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 19
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA IniNull  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 20
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA CurrNull  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 21
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA FimNull  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 22
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA IniTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 23
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA CurrTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 24
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA FimTrash  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 25
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA TipoNo  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 26
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA TipoIni 
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Recupera 27
+=criar          ptrListaA               OK
+=ins            ptrListaA ValorA        OK
+=ins            ptrListaA ValorB        OK
+=ins            ptrListaA ValorC        OK
+=deturpar       ptrListaA TipoFim  
+=verifica       ptrListaA               ErroEstruturalRepair
+=recupera       ptrListaA
+=des            ptrListaA               OK
+
+== Terminar contagem
+=pararcontagem
+=verificarcontagens                     0
+
+==Finalizando
+=terminarcontadores

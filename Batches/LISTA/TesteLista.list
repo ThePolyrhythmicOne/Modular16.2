@@ -1,0 +1,129 @@
+GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
+   LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
+
+Composição do construto: TesteLista.comp
+
+   Nome do Construto:           TesteLista
+   Diretório base:              C:\Users\Gabriel\Dropbox\modular\Batches\LISTA
+
+   Arquivo composição:          TesteLista.comp
+   Arquivo plataforma:          gmake.parm
+
+   Arquivo diretivas MAKE:      TesteLista.make
+   Arquivo diretivas LINK:      TesteLista.build
+   Arquivo listagem:            TesteLista.list
+
+Módulos do construto: TesteLista.comp
+
+   LISTA.c
+   TESTLIS.c
+
+Estatísticas do construto
+
+   Estatísticas do arquivo: Generico.h
+      Total linhas:             588
+      Linhas de código:          54
+      Linhas de comentário:     470
+      Linhas em branco:          64
+   Arquivos de inclusão de que necessita
+      TST_Espc.h
+   Arquivos em que é incluído
+      TESTLIS.c
+
+   Estatísticas do arquivo: LISTA.H
+      Total linhas:             363
+      Linhas de código:          35
+      Linhas de comentário:     278
+      Linhas em branco:          50
+   Arquivos em que é incluído
+      LISTA.c
+
+   Estatísticas do arquivo: LISTA.c
+      Total linhas:             593
+      Linhas de código:         312
+      Linhas de comentário:     137
+      Linhas em branco:         162
+   Arquivos de inclusão de que necessita
+      LISTA.H
+
+   Estatísticas do arquivo: LerParm.h
+      Total linhas:             463
+      Linhas de código:          36
+      Linhas de comentário:     362
+      Linhas em branco:          65
+   Arquivos em que é incluído
+      TESTLIS.c
+
+   Estatísticas do arquivo: Lista.h
+      Total linhas:             363
+      Linhas de código:          35
+      Linhas de comentário:     278
+      Linhas em branco:          50
+   Arquivos em que é incluído
+      TESTLIS.c
+
+   Estatísticas do arquivo: TESTLIS.c
+      Total linhas:             425
+      Linhas de código:         230
+      Linhas de comentário:      84
+      Linhas em branco:         125
+   Arquivos de inclusão de que necessita
+      Generico.h
+      LerParm.h
+      Lista.h
+      TST_Espc.h
+
+   Estatísticas do arquivo: TST_Espc.h
+      Total linhas:             320
+      Linhas de código:          23
+      Linhas de comentário:     277
+      Linhas em branco:          20
+   Arquivos em que é incluído
+      Generico.h
+      TESTLIS.c
+
+Totais por tipo de arquivo
+
+  Tipo: obj      Path: .
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: err      Path: ..\..\Produto
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: h        Path: ..\..\Fontes
+         Total linhas do tipo:      1734
+         Linhas de código:           148
+         Linhas de comentário:      1387
+         Linhas em branco:           199
+         Arquivos deste tipo:          4
+
+  Tipo: DEFAULT  Path: ..\..\Fontes
+         Total linhas do tipo:       363
+         Linhas de código:            35
+         Linhas de comentário:       278
+         Linhas em branco:            50
+         Arquivos deste tipo:          1
+
+  Tipo: c        Path: ..\..\Fontes
+         Total linhas do tipo:      1018
+         Linhas de código:           542
+         Linhas de comentário:       221
+         Linhas em branco:           287
+         Arquivos deste tipo:          2
+
+Totais para todo o construto TesteLista
+
+   Total linhas:              3115
+   Linhas de código:           725
+   Linhas de comentário:      1886
+   Linhas em branco:           536
+   Arquivos processados:         7
+

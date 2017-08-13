@@ -1,0 +1,62 @@
+//Autores: PCT e GB
+//As funcoes preenche vetor neutro, preenche vetor final, preenche vetor pecas nao sao
+//testadas porque sao usadas apenas em outros modulos, que nao sao testados.
+//Data: 13/12
+
+== Condicoes de Retorno
+=declararparm OK int 0
+=declararparm TNaoExiste int 1
+=declararparm FalhaInicializacao int 2
+=declararparm FalhaCriacao int 3
+=declararparm TJaExiste int 4
+=declararparm FaltouMemoria int 5
+=declararparm FalhaDestruicao int 8
+=declararparm TJaInicializado int 9
+=declararparm Erro int 10
+
+==Deturpacoes
+=declararparm TabNulo int 0
+=declararparm UmaCabeca int 1
+=declararparm DuasCabecas int 2
+=declararparm TodasAsCabecas int 3
+
+== Variavel 
+=declararparm ptrTabuleiro string "tb"
+
+=inicializarcontadores                  ""
+
+==Recupera 1
+=criar ptrTabuleiro OK
+=init ptrTabuleiro OK
+=deturpar TabNulo
+=verifica ptrTabuleiro Erro
+=recovertab ptrTabuleiro OK
+=dest ptrTabuleiro OK
+
+==Recupera 2
+=criar ptrTabuleiro OK
+=init ptrTabuleiro OK
+=deturpar UmaCabeca
+=verifica ptrTabuleiro Erro
+=recoverintegridade ptrTabuleiro OK
+=dest ptrTabuleiro OK
+
+==Recupera 3
+=criar ptrTabuleiro OK
+=init ptrTabuleiro OK
+=deturpar DuasCabecas
+=verifica ptrTabuleiro Erro
+=recoverintegridade ptrTabuleiro OK
+=dest ptrTabuleiro OK
+
+==Recupera 4
+=criar ptrTabuleiro OK
+=init ptrTabuleiro OK
+=deturpar TodasAsCabecas
+=verifica ptrTabuleiro Erro
+=recoverintegridade ptrTabuleiro OK
+=verifica ptrTabuleiro OK
+=dest ptrTabuleiro OK
+
+==Finalizando
+=terminarcontadores

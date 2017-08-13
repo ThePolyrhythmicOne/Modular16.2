@@ -1,0 +1,14 @@
+## Relatório sobre as assertivas do programa de Ludo ##
+
+   O programa de Ludo deve lidar com eventuais exceções e tratá-las, afim de manter a corretude do programa. 
+   Nesse caso, essas exceções são perdas de ponteiros, falhas de integridade da lista circular e perda da cabeça da lista tblr na estrutura do tabuleiro.
+   As exceções escolhidas para serem tratadas são: Perda do ponteiro das cabeça das listas que compoem o tabuleiro, Perda de ponteiros na Lista Circular e perda da cabeça da lista de listas do tabuleiro.
+   Todas são tratadas por Recuperação por Avanço.
+   As assertivas foram implementadas nos seguintes módulos: Tabuleiro, Lista Circular.
+   A perda de ponteiros das cabeças das listas que compoem o tabuleiro é tratada a partir do uso de uma estrutura auxiliar criada por nós, que chamamos de 'hidra', que de forma similar ao CESPDIN, possui redundâncias das cabeças em questão. 
+   Falhas de integridade da lista circular são resolvidos com uma outra estrutura auxiliar similar à hidra mencionada acima, que ao invés de possuir redundâncias das cabeças, possui redundâncias dos próprios nós.
+   Ambos os mencionados acima são invocados quando, no meio da execução do programa, o código detecte que houve alguma perda de ponteiros (como através da função verificadora da Lista Circular por exemplo), apesar de que nem todos os erros possíveis de ponteiros serão corrigidos.
+   Os erros do tabuleiro são tratados caso, no meio da execução do programa, o código detecte que a cabeça para a lista de listas no tabuleiro foi perdido e realiza a correção através de uma função auxiliar, que fará o reparo utilizando a redundância.
+   Afim de induzir as falhas de perdas de ponteiros, basta apontar certos ponteiros seletos para locais indevidos. Dessa forma, essas exceções devem ser detectadas e tratadas.
+   No caso das falhas estruturais em listas circulares, podemos alterar os tipos dos nós e fazer com que os ponteiros para o inicio, fim e nó corrente se percam. Esses erros são tratáveis utilizando a função de recuperação implementada.
+   

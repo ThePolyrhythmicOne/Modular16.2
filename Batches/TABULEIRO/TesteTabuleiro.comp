@@ -1,0 +1,26 @@
+# Gera .exe do Tabuleiro
+
+[Diretorios]
+
+Nome = TesteTabuleiro
+PathDefault = ..\..\Fontes
+h = ..\..\Fontes
+c = ..\..\Fontes
+err = ..\..\Produto
+
+[Modulos]
+LCIRCULAR /D_DEBUG
+LISTA /D_DEBUG
+PECA /D_DEBUG
+TABULEIRO /D_DEBUG
+TESTATABULEIRO /D_DEBUG
+
+[BuildInicio]
+/OUT:..\..\Produto\TesteTabuleiro.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

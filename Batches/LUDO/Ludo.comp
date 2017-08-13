@@ -1,0 +1,27 @@
+# Gera .exe do LUDO
+
+[Diretorios]
+
+Nome = Ludo
+PathDefault = ..\..\Fontes
+h = ..\..\Fontes
+c = ..\..\Fontes
+err = ..\..\Produto
+
+[Modulos]
+LCIRCULAR
+LISTA
+PECA
+TABULEIRO
+DESENHA
+RODADA
+MAIN
+
+[BuildInicio]
+/OUT:..\..\Produto\Ludo.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+
+[Fim]

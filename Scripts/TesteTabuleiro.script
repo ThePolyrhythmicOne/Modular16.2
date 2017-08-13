@@ -1,0 +1,45 @@
+//Autores: PCT e GB
+//As funcoes preenche vetor neutro, preenche vetor final, preenche vetor pecas nao sao
+//testadas porque sao usadas apenas em outros modulos, que nao sao testados.
+//Data: 13/11
+
+== Condicoes de Retorno
+=declararparm OK int 0
+=declararparm TNaoExiste int 1
+=declararparm FalhaInicializacao int 2
+=declararparm FalhaCriacao int 3
+=declararparm TJaExiste int 4
+=declararparm FaltouMemoria int 5
+=declararparm FalhaDestruicao int 8
+=declararparm TJaInicializado int 9
+
+== Variavel 
+=declararparm ptrTabuleiro string "tb"
+
+=inicializarcontadores                  ""
+
+== Criando e Inicializando um Tabuleiro
+=criar ptrTabuleiro OK
+=init ptrTabuleiro OK
+=dest ptrTabuleiro OK
+
+== Tentando destruir algo inexistente
+=dest ptrTabuleiro TNaoExiste
+
+== Tentando inicializar algo inexistente
+=init ptrTabuleiro FalhaInicializacao
+
+== Criar algo 2 vezes
+=criar ptrTabuleiro  OK
+=criar ptrTabuleiro  TJaExiste
+
+== Inicializando 2 vezes
+=init ptrTabuleiro OK
+=init ptrTabuleiro TJaInicializado
+
+== Destruindo
+=dest ptrTabuleiro  OK
+=dest ptrTabuleiro  TNaoExiste
+
+==Finalizando
+=terminarcontadores

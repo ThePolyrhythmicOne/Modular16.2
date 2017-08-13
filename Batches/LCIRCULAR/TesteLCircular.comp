@@ -1,0 +1,23 @@
+# Gera .exe do TesteLCircular
+
+[Diretorios]
+
+Nome = TesteLCircular
+PathDefault = ..\..\Fontes
+h = ..\..\Fontes
+c = ..\..\Fontes
+err = ..\..\Produto
+
+[Modulos]
+LCIRCULAR /D_DEBUG
+TESTACIRCULAR /D_DEBUG
+
+[BuildInicio]
+/OUT:..\..\Produto\TesteLCircular.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

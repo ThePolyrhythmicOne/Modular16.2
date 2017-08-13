@@ -1,0 +1,6 @@
+/OUT:..\..\Produto\Ludo.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+LCIRCULAR.obj  LISTA.obj  PECA.obj  TABULEIRO.obj  DESENHA.obj  
+RODADA.obj  MAIN.obj  
+

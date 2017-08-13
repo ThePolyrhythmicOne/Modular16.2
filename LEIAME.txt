@@ -1,0 +1,24 @@
+﻿*************************** LeiaMe Jogo Ludo **********************************
+
+  Para a execução do programa, basta rodar o arquivo executável contido nesta pasta.
+
+*************************** Descrição do Jogo *********************************
+
+	O programa começa pedindo o número de jogadores que participarão, esperando
+um número inteiro de 2 a 4. Depois da escolha da quantidade de jogadores, cada
+participante terá que rodar o dado, com o maior número resultante indicando o 
+individuo que começa a partida.
+	O objetivo do jogo é fazer com que suas peças atravessem todo o trajeto no
+sentido horário, depois entrando no tubo de cor correspondente e parando na casa
+central de cor correspondente. Para ganhar, o indivíduo terá que fazer isso para
+todas as 4 peças que terá no início do jogo.
+	No princípio da partida, os jogadores terão que tirar 6 ou 1 no dado para iniciar a
+movimentação de uma de suas peças, se repetindo para cada uma de suas peças no 
+decorrer do jogo. À partir daí o valor que sair no dado será o determinante de 
+quantas casas a peça em questão andará. Caso o resultado do dado seja 6 ou 1 novamente
+o jogador pode escolher entre movimentar uma de suas peças já em movimento ou dar
+início ao trajeto de uma de suas peças ainda na casa de início, respeitando a regra de que
+apenas uma peça da mesma cor pode estar em uma casa, caso duas peças de cores distintas
+estejam na mesma casa, a peça mais antiga é devolvida para seu respectivo jogador.
+	Assim que o algum jogador finalizar o jogo, ele é declarado ganhador e o
+programa acaba a sua execução, mediante confirmação do usuário.

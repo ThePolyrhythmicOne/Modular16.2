@@ -1,0 +1,283 @@
+GERADOR DE SCRIPT DE DIRETIVAS PARA MAKE
+   LES / Informática / PUC-Rio    Versão 6.00 (c) 2005
+
+Composição do construto: Ludo.comp
+
+   Nome do Construto:           Ludo
+   Diretório base:              C:\Users\Pedro\Dropbox\modular\Batches\LUDO
+
+   Arquivo composição:          Ludo.comp
+   Arquivo plataforma:          gmake.parm
+
+   Arquivo diretivas MAKE:      Ludo.make
+   Arquivo diretivas LINK:      Ludo.build
+   Arquivo listagem:            Ludo.list
+
+Módulos do construto: Ludo.comp
+
+   LCIRCULAR.c
+   LISTA.c
+   PECA.c
+   TABULEIRO.c
+   DESENHA.c
+   RODADA.c
+   MAIN.c
+
+Estatísticas do construto
+
+   Estatísticas do arquivo: ../Tabelas/IdTiposEspaco.def
+      Total linhas:              36
+      Linhas de código:           9
+      Linhas de comentário:      22
+      Linhas em branco:           5
+   Arquivos em que é incluído
+      LCIRCULAR.c
+
+   Estatísticas do arquivo: CESPDIN.H
+      Total linhas:             668
+      Linhas de código:          52
+      Linhas de comentário:     519
+      Linhas em branco:          97
+   Arquivos em que é incluído
+      LCIRCULAR.c
+
+   Estatísticas do arquivo: CONTA.H
+      Total linhas:             495
+      Linhas de código:          44
+      Linhas de comentário:     372
+      Linhas em branco:          79
+   Arquivos em que é incluído
+      LCIRCULAR.c
+
+   Estatísticas do arquivo: DESENHA.H
+      Total linhas:             169
+      Linhas de código:          17
+      Linhas de comentário:     132
+      Linhas em branco:          20
+   Arquivos de inclusão de que necessita
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      TABULEIRO.H
+   Arquivos em que é incluído
+      DESENHA.c
+      MAIN.c
+      RODADA.c
+
+   Estatísticas do arquivo: DESENHA.c
+      Total linhas:             506
+      Linhas de código:         426
+      Linhas de comentário:      66
+      Linhas em branco:          31
+   Arquivos de inclusão de que necessita
+      DESENHA.H
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      TABAUXILIAR.H
+      TABULEIRO.H
+
+   Estatísticas do arquivo: LCIRCULAR.H
+      Total linhas:             394
+      Linhas de código:          52
+      Linhas de comentário:     288
+      Linhas em branco:          54
+   Arquivos em que é incluído
+      DESENHA.H
+      DESENHA.c
+      LCIRCULAR.c
+      MAIN.c
+      RODADA.H
+      RODADA.c
+      TABAUXILIAR.H
+      TABULEIRO.H
+      TABULEIRO.c
+
+   Estatísticas do arquivo: LCIRCULAR.c
+      Total linhas:             863
+      Linhas de código:         723
+      Linhas de comentário:     106
+      Linhas em branco:          71
+   Arquivos de inclusão de que necessita
+      ../Tabelas/IdTiposEspaco.def
+      CESPDIN.H
+      CONTA.H
+      LCIRCULAR.H
+
+   Estatísticas do arquivo: LISTA.H
+      Total linhas:             363
+      Linhas de código:          35
+      Linhas de comentário:     278
+      Linhas em branco:          50
+   Arquivos em que é incluído
+      DESENHA.H
+      DESENHA.c
+      LISTA.c
+      MAIN.c
+      RODADA.H
+      RODADA.c
+      TABAUXILIAR.H
+      TABULEIRO.H
+      TABULEIRO.c
+
+   Estatísticas do arquivo: LISTA.c
+      Total linhas:             593
+      Linhas de código:         312
+      Linhas de comentário:     137
+      Linhas em branco:         162
+   Arquivos de inclusão de que necessita
+      LISTA.H
+
+   Estatísticas do arquivo: MAIN.c
+      Total linhas:              42
+      Linhas de código:          39
+      Linhas de comentário:       0
+      Linhas em branco:           3
+   Arquivos de inclusão de que necessita
+      DESENHA.H
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      RODADA.H
+      TABULEIRO.H
+
+   Estatísticas do arquivo: PECA.H
+      Total linhas:             138
+      Linhas de código:          22
+      Linhas de comentário:      99
+      Linhas em branco:          18
+   Arquivos em que é incluído
+      DESENHA.H
+      DESENHA.c
+      MAIN.c
+      PECA.c
+      RODADA.H
+      RODADA.c
+      TABAUXILIAR.H
+      TABULEIRO.H
+      TABULEIRO.c
+
+   Estatísticas do arquivo: PECA.c
+      Total linhas:              59
+      Linhas de código:          28
+      Linhas de comentário:      25
+      Linhas em branco:           8
+   Arquivos de inclusão de que necessita
+      PECA.H
+
+   Estatísticas do arquivo: RODADA.H
+      Total linhas:             103
+      Linhas de código:          20
+      Linhas de comentário:      65
+      Linhas em branco:          18
+   Arquivos de inclusão de que necessita
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      TABULEIRO.H
+   Arquivos em que é incluído
+      MAIN.c
+      RODADA.c
+
+   Estatísticas do arquivo: RODADA.c
+      Total linhas:             746
+      Linhas de código:         645
+      Linhas de comentário:      96
+      Linhas em branco:          41
+   Arquivos de inclusão de que necessita
+      DESENHA.H
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      RODADA.H
+      TABULEIRO.H
+
+   Estatísticas do arquivo: TABAUXILIAR.H
+      Total linhas:              96
+      Linhas de código:           7
+      Linhas de comentário:      79
+      Linhas em branco:          10
+   Arquivos de inclusão de que necessita
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      TABULEIRO.H
+   Arquivos em que é incluído
+      DESENHA.c
+      TABULEIRO.c
+
+   Estatísticas do arquivo: TABULEIRO.H
+      Total linhas:             332
+      Linhas de código:          63
+      Linhas de comentário:     220
+      Linhas em branco:          49
+   Arquivos de inclusão de que necessita
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+   Arquivos em que é incluído
+      DESENHA.H
+      DESENHA.c
+      MAIN.c
+      RODADA.H
+      RODADA.c
+      TABAUXILIAR.H
+      TABULEIRO.c
+
+   Estatísticas do arquivo: TABULEIRO.c
+      Total linhas:            1049
+      Linhas de código:         891
+      Linhas de comentário:     111
+      Linhas em branco:          73
+   Arquivos de inclusão de que necessita
+      LCIRCULAR.H
+      LISTA.H
+      PECA.H
+      TABAUXILIAR.H
+      TABULEIRO.H
+
+Totais por tipo de arquivo
+
+  Tipo: obj      Path: .
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: err      Path: ..\..\Produto
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: h        Path: ..\..\Fontes
+         Total linhas do tipo:         0
+         Linhas de código:             0
+         Linhas de comentário:         0
+         Linhas em branco:             0
+         Arquivos deste tipo:          0
+
+  Tipo: DEFAULT  Path: ..\..\Fontes
+         Total linhas do tipo:      2794
+         Linhas de código:           321
+         Linhas de comentário:      2074
+         Linhas em branco:           400
+         Arquivos deste tipo:         10
+
+  Tipo: c        Path: ..\..\Fontes
+         Total linhas do tipo:      3858
+         Linhas de código:          3064
+         Linhas de comentário:       541
+         Linhas em branco:           389
+         Arquivos deste tipo:          7
+
+Totais para todo o construto Ludo
+
+   Total linhas:              6652
+   Linhas de código:          3385
+   Linhas de comentário:      2615
+   Linhas em branco:           789
+   Arquivos processados:        17
+

@@ -1,0 +1,23 @@
+# Gera .exe do Tabuleiro
+
+[Diretorios]
+
+Nome = TestePeca
+PathDefault = ..\..\Fontes
+h = ..\..\Fontes
+c = ..\..\Fontes
+err = ..\..\Produto
+
+[Modulos]
+PECA
+TESTAPECA
+
+[BuildInicio]
+/OUT:..\..\Produto\TestePeca.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]
